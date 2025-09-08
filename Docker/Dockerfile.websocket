@@ -1,0 +1,11 @@
+FROM oven/bun:1
+#Working Dir
+WORKDIR /app
+#Copy the entire workspace to preserve the workspace
+COPY . .
+#Install the bun 
+RUN bun install
+#copy the websocket server
+WORKDIR /app/apps/websocket
+EXPOSE 3002 
+CMD [ "bun","run","start" ]

@@ -1,0 +1,17 @@
+# Use official Bun image
+FROM oven/bun:1
+
+WORKDIR /app
+
+# Copy everything (to preserve workspaces)
+COPY . .
+
+# Install deps at root (resolves workspaces)
+RUN bun install
+
+# Set backend as workdir
+WORKDIR /app/apps/backend
+
+EXPOSE 3001
+
+CMD ["bun", "run", "start"]
