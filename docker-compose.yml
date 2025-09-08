@@ -1,0 +1,20 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Docker/Dockerfile.frontend
+    ports:
+      - "3000:3000"
+  backend:
+    build:
+      context: .
+      dockerfile: Docker/Dockerfile.backend
+    ports:
+      - "3001:3001"
+  websocket:
+    build:
+      context: .
+      dockerfile: Docker/Dockerfile.websocket
+    ports:
+      - "3002:3002"
+    
