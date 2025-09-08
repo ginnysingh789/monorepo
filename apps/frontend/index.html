@@ -65,11 +65,12 @@
         document.addEventListener('DOMContentLoaded', () => {
             const todoList = document.getElementById('todo-list');
             const statusMessage = document.getElementById('status-message');
-
-            fetch('http://localhost:3001/todos')
+            // https://miniature-disco-5g5qr7j9xjxhv756-3001.app.github.dev/todos
+            // https://miniature-disco-5g5qr7j9xjxhv756-3001.app.github.dev/
+            fetch('https://miniature-disco-5g5qr7j9xjxhv756-3001.app.github.dev/todos')
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
+                        throw new Error(`HTTP error! status: ${response.status} ${response}`);
                     }
                     return response.json();
                 })

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "bun --watch dev.ts"
+    "dev": "bun --watch dev.ts",
+    "start": "bun run dev.ts"
   },
   "dependencies": {
     "@elysiajs/static": "^1.0.3",

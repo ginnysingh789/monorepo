@@ -18,5 +18,8 @@
     "apps/websocket",
     "apps/frontend",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
 }

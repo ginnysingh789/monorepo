@@ -11,7 +11,11 @@ const todos = [
 console.log("🚀 Backend HTTP server starting...");
 
 const app = new Elysia()
-  .use(cors()) 
+  .use(cors({//https://miniature-disco-5g5qr7j9xjxhv756-3000.app.github.dev/
+    origin: "https://miniature-disco-5g5qr7j9xjxhv756-3000.app.github.dev" // frontend origin (no path)
+    
+  
+  })) 
   .get('/', () => ({ message: 'Welcome to the Todo Backend!' }))
   .get('/todos', () => {
     console.log("✅ [GET /todos] Fetched all todos for frontend");

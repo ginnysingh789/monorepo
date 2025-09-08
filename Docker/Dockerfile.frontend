@@ -1,0 +1,10 @@
+#Base image
+FROM oven/bun:1
+#Working DIR
+WORKDIR /app
+#copy everyhthing(Because menorepo error but it is not optimal way)
+COPY . .
+RUN bun install
+WORKDIR /app/apps/frontend
+EXPOSE 3000
+CMD ["bun","run","start"]
