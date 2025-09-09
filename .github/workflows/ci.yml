@@ -1,10 +1,4 @@
-#Name of the pipeline 
-#on what it runs ( Push or PUll)
-#Selct Branch
-# Define which work pipeline is going to do  
-#Then Select the vm on which the code is going to run 
-#Then define steps -> which command is going to run like npm build
-name: CI-CD pipeline
+
 
 on:
     push:
@@ -17,6 +11,7 @@ jobs:
     build-and-test:
         runs-on: ubuntu-latest
         steps:
+          
             - name: Clone and Check repistory
               uses: actions/checkout@v4
             - name: Set-up Bun

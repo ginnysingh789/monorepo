@@ -1,0 +1,31 @@
+name: Backend pipeline
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+jobs:
+    Deploy-backend-image:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repistory
+              uses: actions/checkout@v4
+            - name: Login into Docker
+              uses: docker/login-action@v3
+              with:
+                username: ${{secrets.DOCKERHUB_USERNAME}}
+                password: ${{secrets.DOCKERHUB_TOKEN}}
+            - name: Buil and push
+              uses: docker/build-push-action@v4
+              with:
+                context: .
+                file: ./Docker/Dockerfile.backend
+                push: true
+                tags: ginnysingh789/backend:${{github.sha}}
+            
+           
+
+            
+
