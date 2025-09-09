@@ -11,12 +11,12 @@ on:
         branches:
             - main
     pull_request:
-        branches:
+         branches:
             - main
 jobs:
     build-and-test:
-        runs-on: ubuntu@latest
+        runs-on: ubuntu-latest
         steps:
-            - name: Ceck repistory
+            - name: Check repistory
               uses: actions/checkout@v4
-         
+            
