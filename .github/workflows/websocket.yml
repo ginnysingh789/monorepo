@@ -32,4 +32,4 @@ jobs:
                 mkdir -p /home/runner/.ssh
                 ls /home/runner/ssh_key
                 chmod 700 /home/runner/ssh_key
-                ssh -o StrictHostKeyChecking=no -i ~/ssh_key ubuntu@65.2.181.215 -t "sudo docker run --name user_websocket -d -p 3002:3002 ginnysingh789/websocket:${{github.sha}} " 
+                ssh -o StrictHostKeyChecking=no -i ~/ssh_key ubuntu@65.2.181.215 -t "sudo docker pull ginnysingh789/websocket:${{github.sha}}&&sudo docker stop user_websocket || true && sudo docker run --name user_websocket -d -p 3002:3002 ginnysingh789/websocket:${{github.sha}} " 

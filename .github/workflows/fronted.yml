@@ -31,7 +31,7 @@ jobs:
                   mkdir -p /home/runner/.ssh
                   ls /home/runner/ssh_key
                   chmod 700 /home/runner/ssh_key
-                  ssh -o StrictHostKeyChecking=no -i ~/ssh_key ubuntu@65.2.181.215 -t "sudo docker pull ginnysingh789/frontend:${{github.sha}}&&docker stop user_frontend ||true && docker run --name user_frontend -d -p 3000:3000 ginnysingh789/frontend:${{github.sha}} " 
+                  ssh -o StrictHostKeyChecking=no -i ~/ssh_key ubuntu@65.2.181.215 -t "sudo docker pull ginnysingh789/frontend:${{github.sha}}&& sudo docker stop user_frontend ||true && sudo docker run --name user_frontend -d -p 3000:3000 ginnysingh789/frontend:${{github.sha}} " 
 
 
 # Now deploy to the Vm 
