@@ -27,7 +27,7 @@ jobs:
                 
 #deloy to the Vm 
             - name: Deploy to the Vm
-              run:
+              run: |
                 echo "${{ secrets.SSH_PRIVATE_KEY}}" &>~/ssh_key
                 mkdir -p /home/runner/.ssh
                 ls /home/runner/ssh_key
