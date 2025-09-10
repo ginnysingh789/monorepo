@@ -25,3 +25,6 @@ jobs:
                 push: true
                 tags: ginnysingh789/frontend:${{github.sha}}
 
+
+# Now deploy to the Vm 
+
