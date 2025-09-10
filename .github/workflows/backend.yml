@@ -32,7 +32,10 @@ jobs:
                 mkdir -p /home/runner/.ssh
                 ls /home/runner/ssh_key
                 chmod 700 /home/runner/ssh_key
-                ssh -o StrictHostKeyChecking=no -i ~/ssh_key ubuntu@65.2.181.215 -t "sudo docker pull ginnysingh789/backend:${{github.sha}}&&sudo docker stop user_backend || true && sudo docker run --name user_backend -d -p 3001:3001 ginnysingh789/backend:${{github.sha}} "           
+                ssh -o StrictHostKeyChecking=no -i ~/ssh_key ubuntu@65.2.181.215 -t "sudo docker pull ginnysingh789/backend:${{github.sha}}
+                && sudo docker stop user_backend || true
+                && sudo docker rm user_backend || true 
+                && sudo docker run --name user_backend -d -p 3001:3001 ginnysingh789/backend:${{github.sha}} "           
 
             
 
